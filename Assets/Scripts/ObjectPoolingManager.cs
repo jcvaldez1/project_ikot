@@ -78,15 +78,26 @@ public class ObjectPoolingManager : MonoBehaviour {
 		
 	}
 
-	public GameObject GetCircle(){
-		int color = Random.Range (0, 4);//Pick a random color (or no circle)
-		float angle = Random.Range (0,360);//Pick a random angle around the spawnRadius (degrees in a circle)
-		float x = Mathf.Cos (angle)*spawnRadius;//Basically cylindrical coordinates (wooo Math 54!)
-		float y = Mathf.Sin (angle)*spawnRadius;
+	public GameObject GetCircle(int color , int start_pos , int end_pos){ 
+		// Added constants for clearer color mapping
+		int GREEN = 0;
+		int RED = 1;
+		int YELLOW = 2;
+		int BLUE = 3;
+		// Added color as an external parameter so this method would be more flexibly manipulated from the outside.
+		// Added start and end position as parameters instead of arbitrarily set values
+		// NOTE THAT THE COLOR MAPPING HAS BEEN CHANGED ACCORDING TO QUADRANT PLACEMENT IN THE CIRCLE
+		// HAVE REMOVED ABITRARY COLOR SETTER
+		// HAVE REMOVED ARBITRARY POSITION SETTER
+		float angle = Random.Range (start_pos , end_pos); // Picks a random point in the arc region defined by start and end_pos.
+
+		// Added conversion of degree to radian for the Cos and Sin funcx
+		float x = Mathf.Cos(angle*Mathf.Deg2Rad)*spawnRadius;//Basically cylindrical coordinates (wooo Math 54!)
+		float y = Mathf.Sin(angle*Mathf.Deg2Rad)*spawnRadius;
 
 		Vector3 spawnPos = new Vector3 (x, y, 0.0f);//Generate a random spawn position from values calculated above
 
-		if (color == 0) {//Spawn Green Circle
+		if (color == GREEN) {//Spawn Green Circle
 			foreach (GameObject circle in Green) {//Check if there's a deactivated circle in the green list
 				if (!circle.activeInHierarchy) {
 					circle.transform.SetPositionAndRotation (spawnPos, Quaternion.identity);//Set circle position to the random one
@@ -100,7 +111,7 @@ public class ObjectPoolingManager : MonoBehaviour {
 			Green.Add (prefabInstance);
 
 			return prefabInstance;
-		} else if (color == 1) {//Pretty much the same for the rest of the colors
+		} else if (color == BLUE) {//Pretty much the same for the rest of the colors
 			foreach (GameObject circle in Blue) {
 				if (!circle.activeInHierarchy) {
 					circle.transform.SetPositionAndRotation (spawnPos, Quaternion.identity);
@@ -109,12 +120,12 @@ public class ObjectPoolingManager : MonoBehaviour {
 				}
 			}
 
-			GameObject prefabInstance = Instantiate (prefabCircleBlue,spawnPos,Quaternion.identity);
+			GameObject prefabInstance = Instantiate (prefabCircleBlue);
 			prefabInstance.transform.SetParent (transform);
-			Green.Add (prefabInstance);
+			Blue.Add (prefabInstance);
 
 			return prefabInstance;
-		} else if (color == 2) {
+		} else if (color == RED) {
 			foreach (GameObject circle in Red) {
 				if (!circle.activeInHierarchy) {
 					circle.transform.SetPositionAndRotation (spawnPos, Quaternion.identity);
@@ -123,12 +134,12 @@ public class ObjectPoolingManager : MonoBehaviour {
 				}
 			}
 
-			GameObject prefabInstance = Instantiate (prefabCircleRed,spawnPos,Quaternion.identity);
+			GameObject prefabInstance = Instantiate (prefabCircleRed);
 			prefabInstance.transform.SetParent (transform);
-			Green.Add (prefabInstance);
+			Red.Add (prefabInstance);
 
 			return prefabInstance;
-		} else if (color == 3) {
+		} else if (color == YELLOW) {
 			foreach (GameObject circle in Yellow) {
 				if (!circle.activeInHierarchy) {
 					circle.transform.SetPositionAndRotation (spawnPos, Quaternion.identity);
@@ -137,9 +148,9 @@ public class ObjectPoolingManager : MonoBehaviour {
 				}
 			}
 
-			GameObject prefabInstance = Instantiate (prefabCircleYellow,spawnPos,Quaternion.identity);
+			GameObject prefabInstance = Instantiate (prefabCircleYellow);
 			prefabInstance.transform.SetParent (transform);
-			Green.Add (prefabInstance);
+			Yellow.Add (prefabInstance);
 
 			return prefabInstance;
 		} else {//Don't return anything if color = 4

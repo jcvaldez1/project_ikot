@@ -106,10 +106,17 @@ MonoBehaviour:
     y: 30
     width: 1520
     height: 715
+<<<<<<< HEAD
   m_MinSize: {x: 677, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
   controlID: 101
+=======
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
+  vertical: 0
+  controlID: 107
+>>>>>>> bugfix
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,7 +137,11 @@ MonoBehaviour:
     y: 0
     width: 1080
     height: 715
+<<<<<<< HEAD
   m_MinSize: {x: 402, y: 492}
+=======
+  m_MinSize: {x: 406, y: 492}
+>>>>>>> bugfix
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
   controlID: 44
@@ -153,9 +164,15 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1080
+<<<<<<< HEAD
     height: 424
   m_MinSize: {x: 402, y: 221}
   m_MaxSize: {x: 8002, y: 4021}
+=======
+    height: 425
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
+>>>>>>> bugfix
   vertical: 0
   controlID: 45
 --- !u!114 &8
@@ -175,7 +192,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 760
+<<<<<<< HEAD
     height: 424
+=======
+    height: 425
+>>>>>>> bugfix
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
@@ -202,7 +223,11 @@ MonoBehaviour:
     x: 760
     y: 0
     width: 320
+<<<<<<< HEAD
     height: 424
+=======
+    height: 425
+>>>>>>> bugfix
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
@@ -225,9 +250,15 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 424
     width: 1080
     height: 291
+=======
+    y: 425
+    width: 1080
+    height: 290
+>>>>>>> bugfix
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 14}
@@ -236,7 +267,11 @@ MonoBehaviour:
   - {fileID: 14}
   - {fileID: 19}
   m_Selected: 1
+<<<<<<< HEAD
   m_LastSelected: 2
+=======
+  m_LastSelected: 0
+>>>>>>> bugfix
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -255,8 +290,13 @@ MonoBehaviour:
     y: 0
     width: 440
     height: 715
+<<<<<<< HEAD
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
+=======
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
+>>>>>>> bugfix
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -359,9 +399,15 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 8
+<<<<<<< HEAD
     y: 524
     width: 1078
     height: 270
+=======
+    y: 525
+    width: 1078
+    height: 269
+>>>>>>> bugfix
   m_SearchFilter:
     m_NameFilter: 
     m_ClassNames: []
@@ -374,19 +420,33 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
+<<<<<<< HEAD
     - Assets
   m_ViewMode: 1
   m_StartGridSize: 70
   m_LastFolders:
   - Assets
+=======
+    - Assets/Prefabs
+  m_ViewMode: 1
+  m_StartGridSize: 70
+  m_LastFolders:
+  - Assets/Prefabs
+>>>>>>> bugfix
   m_LastFoldersGridSize: 70
   m_LastProjectPath: C:\Users\USER\Desktop\Gamedev\Ikot
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: ea280000
     m_LastClickedID: 10474
     m_ExpandedIDs: 00000000ea280000f628000000ca9a3bffffff7f
+=======
+    m_SelectedIDs: 5a260000
+    m_LastClickedID: 9818
+    m_ExpandedIDs: 00000000402600007626000000ca9a3bffffff7f
+>>>>>>> bugfix
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -414,7 +474,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 86250000
     m_LastClickedID: 9606
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000ea280000f6280000
+=======
+    m_ExpandedIDs: 000000004026000076260000
+>>>>>>> bugfix
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -441,7 +505,11 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
+<<<<<<< HEAD
     m_HadKeyboardFocusLastEvent: 1
+=======
+    m_HadKeyboardFocusLastEvent: 0
+>>>>>>> bugfix
     m_ExpandedInstanceIDs: 5025000020d9ffffbecffffff6250000a26bffffb82200002e220000f026000068d7ffff0028000062220000e8040000d0210000f821000000000000ea04000000220000fc2100002c260000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -494,7 +562,11 @@ MonoBehaviour:
     x: 8
     y: 100
     width: 758
+<<<<<<< HEAD
     height: 403
+=======
+    height: 404
+>>>>>>> bugfix
   m_SceneLighting: 1
   lastFramingTime: 2383.856943955383
   m_2DMode: 1
@@ -594,12 +666,20 @@ MonoBehaviour:
     x: 770
     y: 100
     width: 316
+<<<<<<< HEAD
     height: 403
+=======
+    height: 404
+>>>>>>> bugfix
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: cee7ffff3ae8ffff3ce9ffff76f9ffff00000000
+=======
+    m_ExpandedIDs: 6ef7ffffdaf7ffffdcf8ffff1afcffff00000000
+>>>>>>> bugfix
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -645,9 +725,15 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 8
+<<<<<<< HEAD
     y: 653
     width: 1351
     height: 357
+=======
+    y: 525
+    width: 1078
+    height: 269
+>>>>>>> bugfix
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
   m_Stats: 0
@@ -656,10 +742,10 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -272
-    m_HBaseRangeMax: 272
-    m_VBaseRangeMin: -170
-    m_VBaseRangeMax: 170
+    m_HBaseRangeMin: -201.6
+    m_HBaseRangeMax: 201.6
+    m_VBaseRangeMin: -126
+    m_VBaseRangeMax: 126
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -676,25 +762,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 1351
-      height: 340
+      width: 1078
+      height: 252
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 675.5, y: 170}
+    m_Translation: {x: 539, y: 126}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -675.5
-      y: -170
-      width: 1351
-      height: 340
+      x: -539
+      y: -126
+      width: 1078
+      height: 252
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 1351, y: 357}
+  m_LastWindowPixelSize: {x: 1078, y: 269}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -721,9 +807,15 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 8
+<<<<<<< HEAD
     y: 524
     width: 1078
     height: 270
+=======
+    y: 525
+    width: 1078
+    height: 269
+>>>>>>> bugfix
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52

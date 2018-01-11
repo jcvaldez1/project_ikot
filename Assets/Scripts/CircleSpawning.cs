@@ -41,7 +41,7 @@ public class CircleSpawning : MonoBehaviour {
 		//  THIS FOR LOOP WOULD LOOP THROUGH ALL POSSIBLE COLORS AND WILL BREAK WHEN PAIR NUMBER OF COLORS ARE PICKED
 		foreach (int color in alpha)
 		{
-			if (counter >= pair) {
+			if (counter > pair) {
 				break;
 			}
 			// since color numbers are mapped according to the region on the circle, the starting and end positions can be cimputed relatively

@@ -33,6 +33,14 @@ public class RotateDisc : MonoBehaviour {
 					transform.Rotate (0.0f, 0.0f, -Time.deltaTime * speed);
 				} else if (direction.y < 0 && startPos.x < Screen.width / 2) {//If you touched the left side of the screen and swiped down, rotate counter-clockwise
 					transform.Rotate (0.0f, 0.0f, Time.deltaTime * speed);
+				} else if (direction.x > 0 && startPos.x > Screen.height / 2) {//If you touched the upper side of the screen and swiped right, rotate clockwise
+					transform.Rotate (0.0f, 0.0f, -Time.deltaTime * speed);
+				} else if (direction.x > 0 && startPos.x < Screen.height / 2) {//If you touched the lower side of the screen and swiped right, rotate counter-clockwise
+					transform.Rotate (0.0f, 0.0f, Time.deltaTime * speed);
+				} else if (direction.x < 0 && startPos.x > Screen.height / 2) {//If you touched the upper side of the screen and swiped left, rotate counter-clockwise
+					transform.Rotate (0.0f, 0.0f, Time.deltaTime * speed);
+				} else if (direction.x < 0 && startPos.x < Screen.height / 2) {//If you touched the lower side of the screen and swiped left, rotate clockwise
+					transform.Rotate (0.0f, 0.0f, -Time.deltaTime * speed);
 				}
 				break;
 			case TouchPhase.Ended:

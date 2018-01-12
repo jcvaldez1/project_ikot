@@ -14,9 +14,12 @@ public class RotateDisc : MonoBehaviour {
 	private float fromAngle;
 	private float toAngle;
 
+	private bool hasMoved;
+
 	// Use this for initialization
 	void Start () {
 		speed = 40.0f;
+		hasMoved = false;
 	}
 	
 	// Update is called once per frame
@@ -27,7 +30,7 @@ public class RotateDisc : MonoBehaviour {
 			Debug.DrawLine(transform.position, new Vector3(touch.position.x,touch.position.y,0.0f),Color.white);
 			switch (touch.phase) {
 				case TouchPhase.Began:
-					{
+					{//Compute the vector where the touch started
 					fromTouch = new Vector3 (touch.position.x, touch.position.y, 10.0f);
 					Vector3 fromTouchPos = Camera.main.ScreenToWorldPoint (fromTouch);
 					fromVector = fromTouchPos - transform.position;
@@ -35,33 +38,43 @@ public class RotateDisc : MonoBehaviour {
 					break;
 					}
 				case TouchPhase.Moved://when the finger moves, rotate the circle accordingly
-					{
+					{//Compute the vector where the touch ended
 					toTouch = new Vector3 (touch.position.x, touch.position.y, 10.0f);
 					Vector3 toTouchPos = Camera.main.ScreenToWorldPoint (toTouch);
 					toVector = toTouchPos - transform.position;
 
-
+					//Compute the angles of those vectors
 					fromAngle = Mathf.Atan2 (fromVector.y, fromVector.x) * Mathf.Rad2Deg;
 					toAngle = Mathf.Atan2 (toVector.y, toVector.x) * Mathf.Rad2Deg;
 
+					//Convert the angles from 0-180 which Unity uses to 0-360
 					if (fromAngle < 0) {
 						fromAngle = fromAngle + 360f;
 					}
 
-					if (fromAngle > 0 && toAngle < 0) {
+					if (toAngle < 0) {
 						toAngle = toAngle + 360f;
 					}
 
-					Debug.Log (toAngle);
+					//Account for when the angles have the x-axis (0-axis) in-between (360 becomes 0, 0 becomes 360)
+					if ((fromAngle > 350) && (toAngle < 90)) {
+						toAngle = toAngle + 360f;
+					}
 
-					fromTouch = new Vector3 (touch.position.x, touch.position.y, 0.0f);
+					if ((fromAngle < 90) && (toAngle > 350)){
+						toAngle = toAngle - 360f;
+					}
+
+					//Debug.Log ("From:" + fromAngle + " To: " + toAngle + "Has Moved: " + hasMoved);
+
+					//Rotate disc given computations
+					transform.Rotate (0, 0, (toAngle-fromAngle)* Time.deltaTime * speed);
+
+
+					//Compute new from values to ensure rotation is smooth
+					fromTouch = new Vector3 (touch.position.x, touch.position.y, 10.0f);
 					Vector3 fromTouchPos = Camera.main.ScreenToWorldPoint (fromTouch);
 					fromVector = fromTouchPos - transform.position;
-
-					//Quaternion q = Quaternion.AngleAxis (toAngle - fromAngle, Vector3.forward);
-					//transform.rotation = Quaternion.Slerp (transform.rotation, q, Time.deltaTime * speed);
-
-					transform.Rotate (0, 0, (toAngle-fromAngle)* Time.deltaTime * speed);
 
 					break;
 					}
@@ -74,7 +87,11 @@ public class RotateDisc : MonoBehaviour {
 	}
 }
 
-/*				direction = touch.position - startPos;//what direction you moved your finger
+/*				
+ * 
+ * 
+ * Older version of the rotation code
+ * direction = touch.position - startPos;//what direction you moved your finger
 				startPos = touch.position;//update current position as start position for better control of the disc
 				if (direction.y > 0 && startPos.x > Screen.width / 2) {//If you touched the right side of the screen and swiped up, rotate counter-clockwise
 					transform.Rotate (0.0f, 0.0f, Time.deltaTime * speed);

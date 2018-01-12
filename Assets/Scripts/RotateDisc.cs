@@ -14,12 +14,9 @@ public class RotateDisc : MonoBehaviour {
 	private float fromAngle;
 	private float toAngle;
 
-	private bool hasMoved;
-
 	// Use this for initialization
 	void Start () {
 		speed = 40.0f;
-		hasMoved = false;
 	}
 	
 	// Update is called once per frame

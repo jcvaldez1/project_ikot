@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50598699213557356}
   - component: {fileID: 114393957099542732}
   - component: {fileID: 58338559462926874}
+  - component: {fileID: 114324491800045920}
   m_Layer: 0
   m_Name: Circle_Blue
   m_TagString: BlueCircle
@@ -79,6 +80,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.11
+--- !u!114 &114324491800045920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1679136941336142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cddb747a542de574ba9daf5df2fefecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114393957099542732
 MonoBehaviour:
   m_ObjectHideFlags: 1

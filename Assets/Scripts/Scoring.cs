@@ -12,7 +12,7 @@ public class Scoring : MonoBehaviour {
 
 	public Text scoreText;
 
-	private int score;
+	public int score;
 	private int greenScore;
 	private int redScore;
 	private int blueScore;
@@ -20,15 +20,18 @@ public class Scoring : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		greenScore = GreenDisc.GetComponent<CircleDetection>().score;
-		redScore = RedDisc.GetComponent<CircleDetection>().score;
-		blueScore = BlueDisc.GetComponent<CircleDetection>().score;
-		yellowScore = YellowDisc.GetComponent<CircleDetection>().score;
+		score = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//Scores for each of the disc colors
+		scoreText.text = "Score: " + score;
+	}
+}
+
+/*
+ * Old scoring script
+ * //Scores for each of the disc colors
 		greenScore = GreenDisc.GetComponent<CircleDetection>().score;
 		redScore = RedDisc.GetComponent<CircleDetection>().score;
 		blueScore = BlueDisc.GetComponent<CircleDetection>().score;
@@ -36,6 +39,4 @@ public class Scoring : MonoBehaviour {
 
 		//Update score every frame
 		score = greenScore + redScore + blueScore + yellowScore;//Player score is total of the individual disc score
-		scoreText.text = "Score: " + score;
-	}
-}
+		*/

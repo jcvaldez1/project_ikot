@@ -2,7 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\RotateDisc.cs">
     <Files>
-      <File FileName="Assets\Scripts\RotateDisc.cs" Line="52" Column="32" />
+      <File FileName="Assets\Scripts\RotateDisc.cs" Line="74" Column="60" />
+      <File FileName="Assets\Scripts\CircleSpawning.cs" Line="50" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

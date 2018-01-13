@@ -54,10 +54,11 @@
      <Compile Include="Assets\Scripts\CircleDetection.cs" />
      <Compile Include="Assets\Scripts\CircleSpawning.cs" />
      <Compile Include="Assets\Scripts\DiscDetection.cs" />
+     <Compile Include="Assets\Scripts\GyroRotateDisc.cs" />
      <Compile Include="Assets\Scripts\moveToCenter.cs" />
      <Compile Include="Assets\Scripts\ObjectPoolingManager.cs" />
-     <Compile Include="Assets\Scripts\RotateDisc.cs" />
      <Compile Include="Assets\Scripts\Scoring.cs" />
+     <Compile Include="Assets\Scripts\TouchRotateDisc.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -19,7 +19,7 @@ public class TouchRotateDisc : MonoBehaviour {
 
 	public Text speedText;
 
-	// Use this for initialization
+
 	void Awake () {
 		speed = 40f;
 		speedText.text = "Speed/Sensitivity: " + speed;

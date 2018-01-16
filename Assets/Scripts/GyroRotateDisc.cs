@@ -11,10 +11,15 @@ public class GyroRotateDisc : MonoBehaviour {
 
 	public float speed;
 
-	// Use this for initialization
+
 	void Awake () {
 		speed = 150f;
 		speedText.text = "Speed/Sensitivity: " + speed;
+	}
+
+	// Use this for initialization
+	void Start(){
+		
 	}
 	
 	// Update is called once per frame

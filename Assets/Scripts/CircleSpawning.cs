@@ -6,13 +6,17 @@ public class CircleSpawning : MonoBehaviour {
 	
 	private GameObject toBeSpawned;
 	// Use this for initialization
-	void Start () {
-		InvokeRepeating ("spawnCircle", 0.000001f, 3.0f);//Spawn a circle every 3 seconds
+
+	void Start () {//On Enabled so it works when you pause it
+		//InvokeRepeating ("spawnCircle", 3.0f, 3.0f);//Spawn a circle every 3 seconds, 
+													//changed the initial timing here to 3 seconds so that unpausing doesn't cause weird pile ups
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (GameObject.FindGameObjectWithTag ("BlueCircle") == null && GameObject.FindGameObjectWithTag ("GreenCircle") == null && GameObject.FindGameObjectWithTag ("RedCircle") == null && GameObject.FindGameObjectWithTag ("YellowCircle") == null) {
+			spawnCircle ();
+		}
 	}
 
 	void spawnCircle(){

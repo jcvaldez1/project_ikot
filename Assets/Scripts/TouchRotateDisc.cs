@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TouchRotateDisc : MonoBehaviour {
+
+	public GameObject constants;
 
 	public float speed;//Rotation speed
 	private Vector3 fromVector;
@@ -14,9 +17,12 @@ public class TouchRotateDisc : MonoBehaviour {
 	private float fromAngle;
 	private float toAngle;
 
+	public Text speedText;
+
 	// Use this for initialization
-	void Start () {
-		speed = 40.0f;
+	void Awake () {
+		speed = 40f;
+		speedText.text = "Speed/Sensitivity: " + speed;
 	}
 	
 	// Update is called once per frame
@@ -28,7 +34,7 @@ public class TouchRotateDisc : MonoBehaviour {
 			switch (touch.phase) {
 				case TouchPhase.Began:
 					{//Compute the vector where the touch started
-					fromTouch = new Vector3 (touch.position.x, touch.position.y, 10.0f);
+					fromTouch = new Vector3 (touch.position.x, touch.position.y, 10.0f);//Extra 10f since camera is 10 units away from the camera
 					Vector3 fromTouchPos = Camera.main.ScreenToWorldPoint (fromTouch);
 					fromVector = fromTouchPos - transform.position;
 					//Debug.Log (Mathf.Atan2 (fromVector.y, fromVector.x) * Mathf.Rad2Deg);
@@ -58,7 +64,7 @@ public class TouchRotateDisc : MonoBehaviour {
 						toAngle = toAngle + 360f;
 					}
 
-					if ((fromAngle < 90) && (toAngle > 350)){
+					if ((fromAngle < 90) && (toAngle > 270)){
 						toAngle = toAngle - 360f;
 					}
 
@@ -82,28 +88,11 @@ public class TouchRotateDisc : MonoBehaviour {
 			}
 		}
 	}
-}
 
-/*				
- * 
- * 
- * Older version of the rotation code
- * direction = touch.position - startPos;//what direction you moved your finger
-				startPos = touch.position;//update current position as start position for better control of the disc
-				if (direction.y > 0 && startPos.x > Screen.width / 2) {//If you touched the right side of the screen and swiped up, rotate counter-clockwise
-					transform.Rotate (0.0f, 0.0f, Time.deltaTime * speed);
-				} else if (direction.y > 0 && startPos.x < Screen.width / 2) {//If you touched the left side of the screen and swiped up, rotate clockwise
-					transform.Rotate (0.0f, 0.0f, -Time.deltaTime * speed);
-				} else if (direction.y < 0 && startPos.x > Screen.width / 2) {//If you touched the right side of the screen and swiped down, rotate clockwise
-					transform.Rotate (0.0f, 0.0f, -Time.deltaTime * speed);
-				} else if (direction.y < 0 && startPos.x < Screen.width / 2) {//If you touched the left side of the screen and swiped down, rotate counter-clockwise
-					transform.Rotate (0.0f, 0.0f, Time.deltaTime * speed);
-				} else if (direction.x > 0 && startPos.x > Screen.height / 2) {//If you touched the upper side of the screen and swiped right, rotate clockwise
-					transform.Rotate (0.0f, 0.0f, -Time.deltaTime * speed);
-				} else if (direction.x > 0 && startPos.x < Screen.height / 2) {//If you touched the lower side of the screen and swiped right, rotate counter-clockwise
-					transform.Rotate (0.0f, 0.0f, Time.deltaTime * speed);
-				} else if (direction.x < 0 && startPos.x > Screen.height / 2) {//If you touched the upper side of the screen and swiped left, rotate counter-clockwise
-					transform.Rotate (0.0f, 0.0f, Time.deltaTime * speed);
-				} else if (direction.x < 0 && startPos.x < Screen.height / 2) {//If you touched the lower side of the screen and swiped left, rotate clockwise
-					transform.Rotate (0.0f, 0.0f, -Time.deltaTime * speed);
-				}*/
+	public void changeSpeed(float newSpeed){
+		if (newSpeed != speed) {
+			speed = newSpeed;
+			speedText.text = "Speed/Sensitivity: " + speed;
+		}
+	}
+}

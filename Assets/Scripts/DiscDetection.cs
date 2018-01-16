@@ -9,12 +9,12 @@ public class DiscDetection : MonoBehaviour {
 	// Use this for initialization
 	void OnEnable () {
 		//Find gameController prefab
-		gameController = GameObject.FindGameObjectWithTag ("GameController");
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		gameController = GameObject.FindGameObjectWithTag ("GameController");
 	}
 
 	void OnTriggerEnter2D(Collider2D coll){

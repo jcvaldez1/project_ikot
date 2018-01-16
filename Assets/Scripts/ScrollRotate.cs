@@ -1,18 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScrollRotate : MonoBehaviour {
+
+	public GameObject constants;
 
 	public float speed;//Rotation speed
 	private Vector2 startPos;
 	private Vector2 direction;
 	private float rotatevalue = 500;
-	void Start () {
-		speed = 150.0f;	
+
+	public Text speedText;
+
+	void Awake () {
+		speed = 150f;
+		speedText.text = "Speed/Sensitivity: " + speed;
 	}
+
 	bool counter = true;
 	float previousrotatevalue = 500;
+
 	public void move(float position){
 		rotatevalue = position;
 		counter = true;
@@ -20,10 +29,17 @@ public class ScrollRotate : MonoBehaviour {
 
 	void Update() {
 		if(counter){
-			transform.Rotate (0.0f, 0.0f, Time.deltaTime * (21.5f*(rotatevalue - previousrotatevalue)));
+			transform.Rotate (0.0f, 0.0f, speed * Time.deltaTime * (21.5f*(rotatevalue - previousrotatevalue)));
 			previousrotatevalue = rotatevalue;
 		}
 		counter = false;
 
+	}
+
+	public void changeSpeed(float newSpeed){
+		if (newSpeed != speed) {
+			speed = newSpeed;
+			speedText.text = "Speed/Sensitivity: " + speed;
+		}
 	}
 }

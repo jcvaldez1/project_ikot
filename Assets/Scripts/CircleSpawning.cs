@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CircleSpawning : MonoBehaviour {
-	
+
 	private GameObject toBeSpawned;
 	// Use this for initialization
 
@@ -15,13 +15,14 @@ public class CircleSpawning : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (GameObject.FindGameObjectWithTag ("BlueCircle") == null && GameObject.FindGameObjectWithTag ("GreenCircle") == null && GameObject.FindGameObjectWithTag ("RedCircle") == null && GameObject.FindGameObjectWithTag ("YellowCircle") == null) {
+
 			spawnCircle ();
 		}
 	}
 
-	void spawnCircle(){
+	public void spawnCircle(){
 		int regions = 4; // For now we only have 4 regions(quadrants) of the circle so the maximum number of circles spawned at the same time would be 4 
-
+		int direction = determineDirection();
 		int pair = Random.Range (1, regions); // for everytime spawnCircle is called, it will spawn pair number of circles
 		int arclength = 360 / regions; // arclength would be the length of the regions in degrees (i have no idea if this is correct terminology wise)
 		// initialize the start and ending positions of the circles in degrees
@@ -51,8 +52,21 @@ public class CircleSpawning : MonoBehaviour {
 			// since color numbers are mapped according to the region on the circle, the starting and end positions can be cimputed relatively
 			start_pos = color * arclength + 40;
 			end_pos = start_pos + arclength - 40;
-			ObjectPoolingManager.Instance.GetCircle (color, start_pos + RandomScaler, end_pos + RandomScaler);
+			ObjectPoolingManager.Instance.GetCircle (color, start_pos + RandomScaler, end_pos + RandomScaler,direction);
 			counter = counter + 1;
 		}
+	}
+
+	public int determineDirection(){
+		//Determines if circles revolve CW or CCW
+		int rotateDirection = Random.Range (0, 2);
+
+		if (rotateDirection == 0) {
+			rotateDirection = 1;
+		} else {
+			rotateDirection = -1;
+		}
+
+		return rotateDirection;
 	}
 }

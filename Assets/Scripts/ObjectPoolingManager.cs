@@ -78,7 +78,7 @@ public class ObjectPoolingManager : MonoBehaviour {
 		
 	}
 
-	public GameObject GetCircle(int color , int start_pos , int end_pos){ 
+	public GameObject GetCircle(int color , int start_pos , int end_pos , int direction){ 
 		// Added constants for clearer color mapping
 		int GREEN = 0;
 		int RED = 1;
@@ -101,12 +101,14 @@ public class ObjectPoolingManager : MonoBehaviour {
 			foreach (GameObject circle in Green) {//Check if there's a deactivated circle in the green list
 				if (!circle.activeInHierarchy) {
 					circle.transform.SetPositionAndRotation (spawnPos, Quaternion.identity);//Set circle position to the random one
+					circle.GetComponent<moveToCenter>().dir = direction;
 					circle.SetActive (true);//Reactivate circle
 					return circle;
 				}
 			}
 			//If no deactivated circle in list, make new one and add that to the list
 			GameObject prefabInstance = Instantiate (prefabCircleGreen);
+			prefabInstance.GetComponent<moveToCenter>().dir = direction;
 			prefabInstance.transform.SetParent (transform);
 			Green.Add (prefabInstance);
 
@@ -115,12 +117,14 @@ public class ObjectPoolingManager : MonoBehaviour {
 			foreach (GameObject circle in Blue) {
 				if (!circle.activeInHierarchy) {
 					circle.transform.SetPositionAndRotation (spawnPos, Quaternion.identity);
+					circle.GetComponent<moveToCenter>().dir = direction;
 					circle.SetActive (true);
 					return circle;
 				}
 			}
 
 			GameObject prefabInstance = Instantiate (prefabCircleBlue);
+			prefabInstance.GetComponent<moveToCenter>().dir = direction;
 			prefabInstance.transform.SetParent (transform);
 			Blue.Add (prefabInstance);
 
@@ -129,12 +133,14 @@ public class ObjectPoolingManager : MonoBehaviour {
 			foreach (GameObject circle in Red) {
 				if (!circle.activeInHierarchy) {
 					circle.transform.SetPositionAndRotation (spawnPos, Quaternion.identity);
+					circle.GetComponent<moveToCenter>().dir = direction;
 					circle.SetActive (true);
 					return circle;
 				}
 			}
 
 			GameObject prefabInstance = Instantiate (prefabCircleRed);
+			prefabInstance.GetComponent<moveToCenter>().dir = direction;
 			prefabInstance.transform.SetParent (transform);
 			Red.Add (prefabInstance);
 
@@ -143,12 +149,14 @@ public class ObjectPoolingManager : MonoBehaviour {
 			foreach (GameObject circle in Yellow) {
 				if (!circle.activeInHierarchy) {
 					circle.transform.SetPositionAndRotation (spawnPos, Quaternion.identity);
+					circle.GetComponent<moveToCenter>().dir = direction;
 					circle.SetActive (true);
 					return circle;
 				}
 			}
 
 			GameObject prefabInstance = Instantiate (prefabCircleYellow);
+			prefabInstance.GetComponent<moveToCenter>().dir = direction;
 			prefabInstance.transform.SetParent (transform);
 			Yellow.Add (prefabInstance);
 

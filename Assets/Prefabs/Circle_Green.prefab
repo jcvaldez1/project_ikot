@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212788907993980524}
   - component: {fileID: 114422444592147650}
   - component: {fileID: 50784752398978916}
-  - component: {fileID: 114479108740911158}
   - component: {fileID: 58509988304058022}
   - component: {fileID: 114326330642716808}
   m_Layer: 0
@@ -103,18 +102,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
---- !u!114 &114479108740911158
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1922251001866346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8351bf777343a6e4ab244109f75b2db8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
+  radius: 0
+  dir: 0
+  gameController: {fileID: 0}
 --- !u!212 &212788907993980524
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -124,6 +114,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -139,6 +130,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5

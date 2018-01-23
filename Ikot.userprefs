@@ -2,10 +2,13 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\moveToCenter.cs">
     <Files>
-      <File FileName="Assets\Scripts\CircleSpawning.cs" Line="28" Column="29" />
-      <File FileName="Assets\Scripts\ObjectPoolingManager.cs" Line="141" Column="4" />
-      <File FileName="Assets\Scripts\Quit.cs" Line="9" Column="23" />
-      <File FileName="Assets\Scripts\moveToCenter.cs" Line="14" Column="1" />
+      <File FileName="Assets\Scripts\CircleSpawning.cs" Line="19" Column="97" />
+      <File FileName="Assets\Scripts\ObjectPoolingManager.cs" Line="109" Column="34" />
+      <File FileName="Assets\Scripts\Quit.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\moveToCenter.cs" Line="24" Column="3" />
+      <File FileName="Assets\Scripts\DiscDetection.cs" Line="7" Column="9" />
+      <File FileName="Assets\Scripts\Restart.cs" Line="18" Column="21" />
+      <File FileName="Assets\Scripts\Scoring.cs" Line="13" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

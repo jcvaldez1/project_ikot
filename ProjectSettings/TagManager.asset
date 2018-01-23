@@ -13,6 +13,9 @@ TagManager:
   - RedDisc
   - GreenDisc
   - YellowDisc
+  - ObjectPoolingManager
+  - Restart
+  - ScoreText
   layers:
   - Default
   - TransparentFX

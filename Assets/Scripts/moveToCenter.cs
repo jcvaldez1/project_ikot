@@ -10,9 +10,6 @@ public class moveToCenter : MonoBehaviour {
 
 	public GameObject gameController;
 
-	private float startTime;
-	private float currentTime;
-
 	private Vector3 toCenter;
 	private Vector3 toCircle;
 	private int rotateDirection;
@@ -24,19 +21,15 @@ public class moveToCenter : MonoBehaviour {
 
 	// Use this for initialization
 	void OnEnable () {
-		startTime = Time.time;
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		toCenter = new Vector3 (0.0f - transform.position.x, 0.0f - transform.position.y, 0.0f).normalized;//Vector pointing to center
-		toCircle = Vector3.Cross(toCenter,new Vector3(transform.position.x,transform.position.y,1)).normalized;
+		toCircle = Vector3.Cross(toCenter,new Vector3(transform.position.x,transform.position.y,1)).normalized;//Vector field forming a circle around the center
 
-		currentTime = Time.time - startTime;
-
-
-
-		transform.Translate (dir * toCircle * Time.deltaTime);
+		transform.Translate (dir * toCircle * Time.deltaTime);//Rotate around the circle
 		transform.Translate (toCenter * Time.deltaTime);//Follow the vector and move towards the center at a given speed per second
 	}
 

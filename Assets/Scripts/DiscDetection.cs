@@ -5,7 +5,7 @@ using UnityEngine;
 public class DiscDetection : MonoBehaviour {
 
 	private GameObject gameController;
-
+	private GameObject resta;
 	// Use this for initialization
 	void OnEnable () {
 		//Find gameController prefab
@@ -15,6 +15,7 @@ public class DiscDetection : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		gameController = GameObject.FindGameObjectWithTag ("GameController");
+		resta = GameObject.FindGameObjectWithTag ("Restart");
 	}
 
 	void OnTriggerEnter2D(Collider2D coll){
@@ -29,6 +30,8 @@ public class DiscDetection : MonoBehaviour {
 			gameController.GetComponent<Scoring> ().score += 1;
 		} else if (this.gameObject.CompareTag ("YellowCircle") && coll.CompareTag ("YellowDisc")) {
 			gameController.GetComponent<Scoring> ().score += 1;
+		} else {
+			resta.GetComponent<Restart>().destroy();
 		}
 
 		//Deactivate this circle once it hits the disc

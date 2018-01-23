@@ -23,7 +23,24 @@ public class ObjectPoolingManager : MonoBehaviour {
 	void Awake(){
 		instance = this;
 		spawnRadius = 8;
+		createCircles();
+	}
 
+	// Use this for initialization
+	void Start () {
+		
+	}
+
+	void onEnable(){
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
+	public void createCircles(){
 		//For each color, generate a list with the starting amount
 		//Then, fill the lists with circles of the aprropriate color
 		//Circles are deactivated until the GetCircle Function is called
@@ -68,16 +85,6 @@ public class ObjectPoolingManager : MonoBehaviour {
 		}
 	}
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 	public GameObject GetCircle(int color , int start_pos , int end_pos , int direction){ 
 		// Added constants for clearer color mapping
 		int GREEN = 0;
@@ -101,7 +108,7 @@ public class ObjectPoolingManager : MonoBehaviour {
 			foreach (GameObject circle in Green) {//Check if there's a deactivated circle in the green list
 				if (!circle.activeInHierarchy) {
 					circle.transform.SetPositionAndRotation (spawnPos, Quaternion.identity);//Set circle position to the random one
-					circle.GetComponent<moveToCenter>().dir = direction;
+					circle.GetComponent<moveToCenter> ().dir = direction;
 					circle.SetActive (true);//Reactivate circle
 					return circle;
 				}

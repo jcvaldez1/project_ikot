@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CircleSpawning : MonoBehaviour {
+	public GameObject restart;
 
 	private GameObject toBeSpawned;
+	public bool gameOn;
 	// Use this for initialization
 
 	void Start () {//On Enabled so it works when you pause it
@@ -14,8 +16,8 @@ public class CircleSpawning : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (GameObject.FindGameObjectWithTag ("BlueCircle") == null && GameObject.FindGameObjectWithTag ("GreenCircle") == null && GameObject.FindGameObjectWithTag ("RedCircle") == null && GameObject.FindGameObjectWithTag ("YellowCircle") == null) {
-
+		gameOn = restart.GetComponent<Restart> ().gameOn;//Only spawn circles when the game is ongoing
+		if (GameObject.FindGameObjectWithTag ("BlueCircle") == null && GameObject.FindGameObjectWithTag ("GreenCircle") == null && GameObject.FindGameObjectWithTag ("RedCircle") == null && GameObject.FindGameObjectWithTag ("YellowCircle") == null && gameOn) {
 			spawnCircle ();
 		}
 	}

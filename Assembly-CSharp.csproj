@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\ObjectPoolingManager.cs" />
      <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Quit.cs" />
+     <Compile Include="Assets\Scripts\Restart.cs" />
      <Compile Include="Assets\Scripts\Scoring.cs" />
      <Compile Include="Assets\Scripts\ScrollRotate.cs" />
      <Compile Include="Assets\Scripts\TouchRotateDisc.cs" />

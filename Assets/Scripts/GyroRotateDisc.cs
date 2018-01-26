@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GyroRotateDisc : MonoBehaviour {
 
 	public GameObject constants;
+	public GameObject speedSlider;
 
 	public Text speedText;
 
@@ -13,7 +14,7 @@ public class GyroRotateDisc : MonoBehaviour {
 
 
 	void Awake () {
-		speed = 150f;
+		speed = speedSlider.GetComponent<Slider>().value;
 		speedText.text = "Speed/Sensitivity: " + speed;
 	}
 

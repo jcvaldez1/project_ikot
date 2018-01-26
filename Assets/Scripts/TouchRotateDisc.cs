@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TouchRotateDisc : MonoBehaviour {
 
 	public GameObject constants;
+	public GameObject speedSlider;
 
 	public float speed;//Rotation speed
 	private Vector3 fromVector;
@@ -21,7 +22,7 @@ public class TouchRotateDisc : MonoBehaviour {
 
 
 	void Awake () {
-		speed = 40f;
+		speed = speedSlider.GetComponent<Slider>().value;
 		speedText.text = "Speed/Sensitivity: " + speed;
 	}
 	

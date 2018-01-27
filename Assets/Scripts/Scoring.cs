@@ -11,6 +11,7 @@ public class Scoring : MonoBehaviour {
 	public GameObject YellowDisc;
 
 	public Text scoreText;
+	public Text bestscore;
 
 	public int score;
 	private int greenScore;
@@ -18,14 +19,22 @@ public class Scoring : MonoBehaviour {
 	private int blueScore;
 	private int yellowScore;
 
+	public static int highscore;
 	// Use this for initialization
 	void Start () {
-		score = 0;
+		score = 0; 
+		highscore = PlayerPrefs.GetInt ("highscore", highscore);
+		bestscore.text = "Highscore: " + highscore.ToString();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		scoreText.text = "Score: " + score;
+		if(score > highscore){
+			highscore = score;
+			bestscore.text = "Highscore: " + highscore;
+			PlayerPrefs.SetInt ("highscore", highscore);
+		}
 	}
 }
 

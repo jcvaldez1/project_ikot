@@ -152,4 +152,5 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 7c6fb094f5246b8f18656fe8bd7cfc58 Assembly-CSharp.dll:.CircleDetection
 9c4d5c8ec8a190483dc7d452819ad5bd Assembly-CSharp.dll:.Constants
+bbf1104287a7302cc1ad135de466e18e Assembly-CSharp.dll:.CameraMove
 eb35b363463f42867c9bf1022720fcc8 Assembly-CSharp.dll:.Scoring

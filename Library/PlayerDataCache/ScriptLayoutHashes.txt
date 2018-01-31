@@ -14,7 +14,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 9ca6347af5ceb6b0d1c105af31b6722e UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-edb4057938cedf45d1616a82dcab3fc4 Assembly-CSharp.dll:.CircleSpawning
+ff4b2ab0978f9c23c4f0eeb43938e2a8 Assembly-CSharp.dll:.CircleSpawning
 de95bbbec1ec5cf131bae842bd422025 Assembly-CSharp.dll:.ScrollRotate
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -117,7 +117,7 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Quit
-803a72e945d63318009998a12cc1f8b4 Assembly-CSharp.dll:.moveToCenter
+84a79be5421e66423db04981869e86a8 Assembly-CSharp.dll:.moveToCenter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PauseMenu
@@ -152,4 +152,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 7c6fb094f5246b8f18656fe8bd7cfc58 Assembly-CSharp.dll:.CircleDetection
 9c4d5c8ec8a190483dc7d452819ad5bd Assembly-CSharp.dll:.Constants
-c3448e75c44aacb9ac10f16fa06d909b Assembly-CSharp.dll:.Scoring
+eb35b363463f42867c9bf1022720fcc8 Assembly-CSharp.dll:.Scoring

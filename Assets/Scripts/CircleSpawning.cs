@@ -7,6 +7,9 @@ public class CircleSpawning : MonoBehaviour {
 
 	private GameObject toBeSpawned;
 	public bool gameOn;
+
+	public int direction;
+	public int pattern;
 	// Use this for initialization
 
 	void Start () {//On Enabled so it works when you pause it
@@ -24,7 +27,6 @@ public class CircleSpawning : MonoBehaviour {
 
 	public void spawnCircle(){
 		int regions = 4; // For now we only have 4 regions(quadrants) of the circle so the maximum number of circles spawned at the same time would be 4 
-		int direction = determineDirection();
 		int pair = Random.Range (1, regions); // for everytime spawnCircle is called, it will spawn pair number of circles
 		int arclength = 360 / regions; // arclength would be the length of the regions in degrees (i have no idea if this is correct terminology wise)
 		// initialize the start and ending positions of the circles in degrees
@@ -33,6 +35,11 @@ public class CircleSpawning : MonoBehaviour {
 		int counter = 0;
 		int RandomScaler = (Random.Range(0, regions)/1)*arclength;
 		//RandomScaler = 0;
+
+		//Determine revolve direction and pattern
+		direction = determineDirection ();
+		pattern = determinePattern ();
+
 		// Generates a random list containing color mappings.
 		List<int> alpha = new List<int> (regions);
 		for (int j = 0; j < regions; j++) {
@@ -61,14 +68,19 @@ public class CircleSpawning : MonoBehaviour {
 
 	public int determineDirection(){
 		//Determines if circles revolve CW or CCW
-		int rotateDirection = Random.Range (0, 2);
+		int revolveDirection = Random.Range (0, 2);
 
-		if (rotateDirection == 0) {
-			rotateDirection = 1;
+		if (revolveDirection == 0) {
+			revolveDirection = 1;
 		} else {
-			rotateDirection = -1;
+			revolveDirection = -1;
 		}
+			
+		return revolveDirection;
+	}
 
-		return rotateDirection;
+	public int determinePattern(){//tells the spawned circles what pattern to use
+		int pattern = Random.Range (0, 2);
+		return pattern;
 	}
 }

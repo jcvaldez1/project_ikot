@@ -16,6 +16,7 @@ public class moveToCenter : MonoBehaviour {
 	private Vector3 toCenter;
 	private Vector3 toCircle;
 
+	string jukeState;
 
 	void Awake(){
 		speed = 2.0f;//Move speed
@@ -28,6 +29,7 @@ public class moveToCenter : MonoBehaviour {
 		dir = gameController.GetComponent<CircleSpawning> ().direction;
 		pattern = gameController.GetComponent<CircleSpawning>().pattern;
 		startTime = Time.time;
+
 	}
 
 	void OnEnable () {
@@ -35,14 +37,17 @@ public class moveToCenter : MonoBehaviour {
 		dir = gameController.GetComponent<CircleSpawning> ().direction;
 		pattern = gameController.GetComponent<CircleSpawning>().pattern;
 		startTime = Time.time;
+		jukeState = "none";
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (pattern == 0) {
 			Circle ();
 		} else if (pattern == 1) {
 			Triangle ();
+		} else if (pattern == 2) {
+			Star ();
 		}
 		Debug.Log (pattern);
 	}
@@ -73,4 +78,32 @@ public class moveToCenter : MonoBehaviour {
 	}
 
 
+	void Star(){
+		currentTime = Time.time;
+		Debug.Log ("Star: " + jukeState);
+		toCenter = new Vector3 (0.0f - transform.position.x, 0.0f - transform.position.y, 0.0f).normalized;//Vector pointing to center
+		toCircle = Vector3.Cross(toCenter,new Vector3(transform.position.x,transform.position.y,1)).normalized;//Vector field forming a circle around the center
+
+		float clockMultiplier = 1;
+		float suckMultiplier = 1;
+
+		if (jukeState == "none") {//normal patterns
+			if (Vector3.Distance (Vector3.zero, transform.position) < 4) {
+				jukeState = "ignition";
+			}
+		} else if (jukeState == "ignition") {//backs out a bit away from center
+			clockMultiplier = 0;
+			suckMultiplier = -2;
+			if (Vector3.Distance (Vector3.zero, transform.position) > 5) {
+				jukeState = "boost";
+			}
+		} else if (jukeState == "boost"){//fast dive toward center at 180 degrees from where it started
+			clockMultiplier = -4.1f;
+			suckMultiplier = 1;
+		}
+
+
+		transform.Translate (speed *  dir * clockMultiplier * toCircle * Time.deltaTime);//Rotate around the circle
+		transform.Translate (speed * suckMultiplier * toCenter * Time.deltaTime);//Follow the vector and move towards the center at a given speed per second
+	}
 }

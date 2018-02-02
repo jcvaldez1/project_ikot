@@ -80,7 +80,8 @@ public class CircleSpawning : MonoBehaviour {
 	}
 
 	public int determinePattern(){//tells the spawned circles what pattern to use
-		int pattern = Random.Range (0, 2);
+		//int pattern = Random.Range (0, 3);
+		int pattern = 2;
 		return pattern;
 	}
 }

@@ -27,7 +27,7 @@ public class DiscDetection : MonoBehaviour {
 		if (object.Equals (this.tag, coll.tag)) {
 			gameController.GetComponent<Scoring> ().score += 1;
 		} else {
-			resta.GetComponent<Restart>().destroy();
+			resta.GetComponent<Restart>().lose();
 		}
 
 		this.gameObject.SetActive (false);

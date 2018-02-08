@@ -16,15 +16,13 @@ public class CircleSpawning : MonoBehaviour {
 
 
 	void Start () {
-		InvokeRepeating("spawnCircle", 0.00001f, TICK_INTERVAL);
+		//InvokeRepeating("spawnCircle", 0.00001f, TICK_INTERVAL);
 	}
 	void Update () {
 		gameOn = restart.GetComponent<Restart> ().gameOn;
-		/* 
-		 * 
-		 * for now do invokerepeating
-		 * 
-		*/
+		if (GameObject.FindGameObjectsWithTag ("Blue").Length == 1 && GameObject.FindGameObjectsWithTag ("Red").Length == 1 && GameObject.FindGameObjectsWithTag ("Yellow").Length == 1 && GameObject.FindGameObjectsWithTag ("Green").Length == 1) {
+			spawnCircle ();
+		}
 	}
 
 
@@ -32,7 +30,7 @@ public class CircleSpawning : MonoBehaviour {
 
 	public void spawnCircle(){
 		if (gameOn) {
-			Debug.Log ("Troy!");
+			//Debug.Log ("Troy!");
 			int regions = NUMBER_OF_REGIONS;  
 			int pair = Random.Range (1, regions);
 			int arclength = 360 / regions; 
@@ -59,10 +57,10 @@ public class CircleSpawning : MonoBehaviour {
 
 
 
-	private float TickInterval() {
+/*	private float TickInterval() {
 		float TickValue = TICK_INTERVAL;
 		return TickValue;
-	}
+	}*/
 
 
 

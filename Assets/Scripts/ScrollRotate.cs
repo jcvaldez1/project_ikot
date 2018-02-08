@@ -7,10 +7,12 @@ public class ScrollRotate : MonoBehaviour {
 
 	public GameObject constants;
 
-	public float speed;//Rotation speed
+	public float speed;
 	private Vector2 startPos;
 	private Vector2 direction;
-	private float rotatevalue = 500;
+	bool counter = true;
+	private float CURRENT_ROTATE_VALUE = 500;
+	private float PREVIOUS_ROTATE_VALUE = 500;
 
 	public Text speedText;
 
@@ -19,18 +21,16 @@ public class ScrollRotate : MonoBehaviour {
 		speedText.text = "Speed/Sensitivity: " + speed;
 	}
 
-	bool counter = true;
-	float previousrotatevalue = 500;
 
 	public void move(float position){
-		rotatevalue = position;
+		CURRENT_ROTATE_VALUE = position;
 		counter = true;
 	}
 
 	void Update() {
 		if(counter){
-			transform.Rotate (0.0f, 0.0f, speed * Time.deltaTime * (21.5f*(rotatevalue - previousrotatevalue)));
-			previousrotatevalue = rotatevalue;
+			transform.Rotate (0.0f, 0.0f, speed * Time.deltaTime * (21.5f*(CURRENT_ROTATE_VALUE- PREVIOUS_ROTATE_VALUE)));
+			PREVIOUS_ROTATE_VALUE = CURRENT_ROTATE_VALUE;
 		}
 		counter = false;
 

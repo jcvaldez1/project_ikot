@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114326330642716808}
   m_Layer: 0
   m_Name: Circle_Green
-  m_TagString: GreenCircle
+  m_TagString: Green
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,6 +104,7 @@ MonoBehaviour:
   speed: 0
   radius: 0
   dir: 0
+  pattern: 0
   gameController: {fileID: 0}
 --- !u!212 &212788907993980524
 SpriteRenderer:

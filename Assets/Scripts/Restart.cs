@@ -8,27 +8,25 @@ public class Restart : MonoBehaviour {
 	public GameObject gameController;
 	public GameObject disc;
 	public GameObject pause;
-	public GameObject gameOver;
+	public GameObject tryAgain;
 
 	public bool gameOn = true;//Determines whether the game is ongoing or not
 
-	public void destroy(){
-		
+	public void lose(){
 		gameOn = false;
 		destroyCircles ();
 		disc.SetActive (false);
 		pause.SetActive (false);
-		gameOver.SetActive (true);
+		tryAgain.SetActive (true);
 	}
 
 
 	public void reset(){
-
 		gameOn = true;
 		objectPoolingManager.GetComponent<ObjectPoolingManager> ().createCircles ();
 		disc.SetActive (true);
 		pause.SetActive (true);
-		gameOver.SetActive (false);
+		tryAgain.SetActive (false);
 		GameObject.FindGameObjectWithTag("GameController").GetComponent<Scoring>().score = 0;
 	}
 

@@ -16,7 +16,8 @@ public class moveToCenter : MonoBehaviour {
 	private Vector3 toCenter;
 	private Vector3 toCircle;
 
-	string jukeState;
+	private string jukeState;
+	private Vector3 startPos;
 
 	void Awake(){
 		speed = 2.0f;//Move speed
@@ -63,7 +64,6 @@ public class moveToCenter : MonoBehaviour {
 	void Triangle(){
 		toCenter = new Vector3 (0.0f - transform.position.x, 0.0f - transform.position.y, 0.0f).normalized;//Vector pointing to center
 		currentTime = Time.time;
-		Debug.Log ("Triangle");
 		if (currentTime - startTime < 4.0f) {
 			if (Vector3.Distance (Vector3.zero, transform.position) > 4) {
 				transform.Translate (speed * toCenter * Time.deltaTime);
@@ -88,18 +88,25 @@ public class moveToCenter : MonoBehaviour {
 		float suckMultiplier = 1;
 
 		if (jukeState == "none") {//normal patterns
-			if (Vector3.Distance (Vector3.zero, transform.position) < 4) {
+			if (Vector3.Distance (Vector3.zero, transform.position) < 3.2f) {
 				jukeState = "ignition";
 			}
 		} else if (jukeState == "ignition") {//backs out a bit away from center
 			clockMultiplier = 0;
-			suckMultiplier = -2;
-			if (Vector3.Distance (Vector3.zero, transform.position) > 5) {
+			suckMultiplier = -1;
+			if (Vector3.Distance (Vector3.zero, transform.position) > 4.0f) {
 				jukeState = "boost";
+				startPos = transform.position;
 			}
-		} else if (jukeState == "boost"){//fast dive toward center at 180 degrees from where it started
-			clockMultiplier = -4.1f;
-			suckMultiplier = 1;
+		} else if (jukeState == "boost") {//fast juke at 180 degrees from where it started
+			clockMultiplier = -5f;
+			suckMultiplier = 0f;
+			if (Vector3.Angle (transform.position, startPos) > 176f) {
+				jukeState = "event_horizon";
+			}
+		} else if (jukeState == "event_horizon") {
+			clockMultiplier = 0f;
+			suckMultiplier = 2;
 		}
 
 

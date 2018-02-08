@@ -7,26 +7,30 @@ public class GyroRotateDisc : MonoBehaviour {
 
 	public GameObject constants;
 	public GameObject speedSlider;
-
 	public Text speedText;
-
 	public float speed;
+
+
 
 
 	void Awake () {
 		speed = speedSlider.GetComponent<Slider>().value;
 		speedText.text = "Speed/Sensitivity: " + speed;
 	}
-
-	// Use this for initialization
-	void Start(){
 		
-	}
-	
-	// Update is called once per frame
+
+
+
+
+
 	void Update () {
 		transform.Rotate (new Vector3 (0, 0, -Input.acceleration.x*Time.deltaTime*speed));
 	}
+
+
+
+
+
 
 	public void changeSpeed(float newSpeed){
 		if (newSpeed != speed) {
@@ -34,4 +38,11 @@ public class GyroRotateDisc : MonoBehaviour {
 			speedText.text = "Speed/Sensitivity: " + speed;
 		}
 	}
+
+
+
+
+
+
+
 }

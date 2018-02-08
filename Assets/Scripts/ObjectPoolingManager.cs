@@ -6,14 +6,26 @@ public class ObjectPoolingManager : MonoBehaviour {
 
 	private static ObjectPoolingManager instance;
 	public static ObjectPoolingManager Instance { get { return instance; } }
+	public const int NUMBER_OF_COLORS = 4;
+	public const int GREEN = 0;
+	public const int RED = 1;
+	public const int YELLOW = 2;
+	public const int BLUE = 3;
+
+
+	public int spawnRadius;//How far away the circles would spawn
+	public int eachAmount = 3;//How many circles to preload(for each color)
+
 
 	public GameObject prefabCircleGreen;
 	public GameObject prefabCircleBlue;
 	public GameObject prefabCircleRed;
 	public GameObject prefabCircleYellow;
 
-	public int spawnRadius;//How far away the circles would spawn
-	public int eachAmount = 3;//How many circles to preload(for each color)
+	public List<GameObject> PrefabCircles;
+
+
+	private List<List<GameObject>> TheColors;
 
 	private List<GameObject> Green;
 	private List<GameObject> Blue;
@@ -26,24 +38,24 @@ public class ObjectPoolingManager : MonoBehaviour {
 		createCircles();
 	}
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-
-	void onEnable(){
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 	public void createCircles(){
 		//For each color, generate a list with the starting amount
 		//Then, fill the lists with circles of the aprropriate color
 		//Circles are deactivated until the GetCircle Function is called
+		/*for (int i = 0; i < NUMBER_OF_COLORS; i++) {
+
+			for (int j = 0; j < eachAmount; j++) {
+
+				GameObject prefabInstance = Instantiate (PrefabCircles[i]);
+				prefabInstance.transform.SetParent (transform);
+				prefabInstance.SetActive (false);
+
+				TheColors[i].Add (prefabInstance);
+			}
+
+		}*/
+
+
 		Green = new List<GameObject> (eachAmount);
 
 		for (int i = 0; i < eachAmount; i++) {
@@ -86,23 +98,26 @@ public class ObjectPoolingManager : MonoBehaviour {
 	}
 
 	public GameObject GetCircle(int color , int start_pos , int end_pos , int direction){ 
-		// Added constants for clearer color mapping
-		int GREEN = 0;
-		int RED = 1;
-		int YELLOW = 2;
-		int BLUE = 3;
-		// Added color as an external parameter so this method would be more flexibly manipulated from the outside.
-		// Added start and end position as parameters instead of arbitrarily set values
-		// NOTE THAT THE COLOR MAPPING HAS BEEN CHANGED ACCORDING TO QUADRANT PLACEMENT IN THE CIRCLE
-		// HAVE REMOVED ABITRARY COLOR SETTER
-		// HAVE REMOVED ARBITRARY POSITION SETTER
-		float angle = Random.Range (start_pos , end_pos); // Picks a random point in the arc region defined by start and end_pos.
 
-		// Added conversion of degree to radian for the Cos and Sin funcx
-		float x = Mathf.Cos(angle*Mathf.Deg2Rad)*spawnRadius;//Basically cylindrical coordinates (wooo Math 54!)
+		float angle = Random.Range (start_pos , end_pos);
+		float x = Mathf.Cos(angle*Mathf.Deg2Rad)*spawnRadius;
 		float y = Mathf.Sin(angle*Mathf.Deg2Rad)*spawnRadius;
-
-		Vector3 spawnPos = new Vector3 (x, y, 0.0f);//Generate a random spawn position from values calculated above
+		Vector3 spawnPos = new Vector3 (x, y, 0.0f);
+		/*
+		foreach (GameObject circle in TheColors[color]) {//Check if there's a deactivated circle in the green list
+			if (!circle.activeInHierarchy) {
+				circle.transform.SetPositionAndRotation (spawnPos, Quaternion.identity);//Set circle position to the random one
+				//circle.GetComponent<moveToCenter> ().dir = direction;
+				circle.SetActive (true);//Reactivate circle
+				return circle;
+			}
+		}
+		GameObject prefabInstance = Instantiate (prefabCircleGreen);
+		//prefabInstance.GetComponent<moveToCenter>().dir = direction;
+		prefabInstance.transform.SetParent (transform);
+		TheColors[color].Add (prefabInstance)
+		return prefabInstance;
+		*/
 
 		if (color == GREEN) {//Spawn Green Circle
 			foreach (GameObject circle in Green) {//Check if there's a deactivated circle in the green list

@@ -58,7 +58,6 @@ public class moveToCenter : MonoBehaviour {
 	void Triangle(){
 		toCenter = new Vector3 (0.0f - transform.position.x, 0.0f - transform.position.y, 0.0f).normalized;//Vector pointing to center
 		currentTime = Time.time;
-		Debug.Log ("Triangle");
 		if (currentTime - startTime < 4.0f) {
 			if (Vector3.Distance (Vector3.zero, transform.position) > 4) {
 				transform.Translate (speed * toCenter * Time.deltaTime);

@@ -16,6 +16,10 @@ TagManager:
   - ObjectPoolingManager
   - Restart
   - ScoreText
+  - Green
+  - Red
+  - Blue
+  - Yellow
   layers:
   - Default
   - TransparentFX

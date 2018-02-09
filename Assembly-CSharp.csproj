@@ -53,7 +53,6 @@
   <ItemGroup>
      <Compile Include="Assets\Constants.cs" />
      <Compile Include="Assets\Scripts\CameraMove.cs" />
-     <Compile Include="Assets\Scripts\CircleDetection.cs" />
      <Compile Include="Assets\Scripts\CircleSpawning.cs" />
      <Compile Include="Assets\Scripts\DiscDetection.cs" />
      <Compile Include="Assets\Scripts\GyroRotateDisc.cs" />
@@ -62,7 +61,6 @@
      <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Quit.cs" />
      <Compile Include="Assets\Scripts\Restart.cs" />
-     <Compile Include="Assets\Scripts\RotateDisc.cs" />
      <Compile Include="Assets\Scripts\Scoring.cs" />
      <Compile Include="Assets\Scripts\StartScript.cs" />
      <Compile Include="Assets\Scripts\TouchRotateDisc.cs" />

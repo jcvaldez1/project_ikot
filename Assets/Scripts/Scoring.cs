@@ -5,37 +5,39 @@ using UnityEngine.UI;
 
 public class Scoring : MonoBehaviour {
 
-	public GameObject GreenDisc;
-	public GameObject RedDisc;
-	public GameObject BlueDisc;
-	public GameObject YellowDisc;
-
 	public Text scoreText;
+	public Text bestscore;
+	public int score;
+	public static int highscore;
 
-	private int score;
-	private int greenScore;
-	private int redScore;
-	private int blueScore;
-	private int yellowScore;
 
-	// Use this for initialization
 	void Start () {
-		greenScore = GreenDisc.GetComponent<CircleDetection>().score;
-		redScore = RedDisc.GetComponent<CircleDetection>().score;
-		blueScore = BlueDisc.GetComponent<CircleDetection>().score;
-		yellowScore = YellowDisc.GetComponent<CircleDetection>().score;
+		score = 0;
+		SetHighScore ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		//Scores for each of the disc colors
-		greenScore = GreenDisc.GetComponent<CircleDetection>().score;
-		redScore = RedDisc.GetComponent<CircleDetection>().score;
-		blueScore = BlueDisc.GetComponent<CircleDetection>().score;
-		yellowScore = YellowDisc.GetComponent<CircleDetection>().score;
 
-		//Update score every frame
-		score = greenScore + redScore + blueScore + yellowScore;//Player score is total of the individual disc score
-		scoreText.text = "Score: " + score;
+
+
+	void Update () {
+		scoreText.text = ""+score;
+		CheckForHighScore ();
 	}
+
+
+
+	void CheckForHighScore() {
+		if(score > highscore) {
+			highscore = score;
+			bestscore.text = "Highscore: " + highscore;
+			PlayerPrefs.SetInt ("highscore", highscore);
+		}
+	}
+
+
+
+	void SetHighScore() {
+		highscore = PlayerPrefs.GetInt ("highscore", highscore);
+		bestscore.text = "Highscore: " + highscore.ToString();
+	}
+
 }

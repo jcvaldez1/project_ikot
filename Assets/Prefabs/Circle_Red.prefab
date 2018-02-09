@@ -22,11 +22,11 @@ GameObject:
   - component: {fileID: 212480049921664800}
   - component: {fileID: 114953998035015646}
   - component: {fileID: 50502889919388892}
-  - component: {fileID: 114578118588844688}
   - component: {fileID: 58529896463436466}
+  - component: {fileID: 114062321877839504}
   m_Layer: 0
   m_Name: Circle_Red
-  m_TagString: RedCircle
+  m_TagString: Red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +79,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.085
---- !u!114 &114578118588844688
+--- !u!114 &114062321877839504
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -87,10 +87,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1007878175867696}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8351bf777343a6e4ab244109f75b2db8, type: 3}
+  m_Script: {fileID: 11500000, guid: cddb747a542de574ba9daf5df2fefecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
 --- !u!114 &114953998035015646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,6 +102,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  radius: 0
+  dir: 0
+  pattern: 0
+  gameController: {fileID: 0}
 --- !u!212 &212480049921664800
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -112,6 +115,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -127,6 +131,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5

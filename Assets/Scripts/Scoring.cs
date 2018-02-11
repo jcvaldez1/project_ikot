@@ -5,14 +5,13 @@ using UnityEngine.UI;
 
 public class Scoring : MonoBehaviour {
 
-	public GameObject GreenDisc;
-	public GameObject RedDisc;
-	public GameObject BlueDisc;
-	public GameObject YellowDisc;
 	public Text scoreText;
 	public Text bestscore;
 	public int score;
+	public int points;
 	public static int highscore;
+
+	public AudioClip scoreAudio;
 
 
 	void Start () {
@@ -23,7 +22,12 @@ public class Scoring : MonoBehaviour {
 
 
 	void Update () {
-		scoreText.text = ""+score;
+		if (points != 0){
+			AudioSource.PlayClipAtPoint (scoreAudio, Vector3.zero);
+			score = score + points;
+			scoreText.text = ""+ score;
+			points = 0;
+		}
 		CheckForHighScore ();
 	}
 

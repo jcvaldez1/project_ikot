@@ -80,7 +80,7 @@ public class moveToCenter : MonoBehaviour {
 
 	void Star(){
 		currentTime = Time.time;
-		Debug.Log ("Star: " + jukeState);
+		//Debug.Log ("Star: " + jukeState);
 		toCenter = new Vector3 (0.0f - transform.position.x, 0.0f - transform.position.y, 0.0f).normalized;//Vector pointing to center
 		toCircle = Vector3.Cross(toCenter,new Vector3(transform.position.x,transform.position.y,1)).normalized;//Vector field forming a circle around the center
 

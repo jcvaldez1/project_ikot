@@ -3,15 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DiscDetection : MonoBehaviour {
-
-
-
-
 	private GameObject gameController;
 	private GameObject resta;
-
-
-
 
 	void Update () {
 		gameController = GameObject.FindGameObjectWithTag ("GameController");
@@ -25,7 +18,7 @@ public class DiscDetection : MonoBehaviour {
 
 
 		if (object.Equals (this.tag, coll.tag)) {
-			gameController.GetComponent<Scoring> ().score += 1;
+			gameController.GetComponent<Scoring> ().points += 1;
 		} else {
 			resta.GetComponent<Restart>().lose();
 		}

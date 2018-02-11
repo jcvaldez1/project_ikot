@@ -10,9 +10,12 @@ public class Restart : MonoBehaviour {
 	public GameObject pause;
 	public GameObject tryAgain;
 
+	public AudioClip loseAudio;
+
 	public bool gameOn = true;//Determines whether the game is ongoing or not
 
 	public void lose(){
+		AudioSource.PlayClipAtPoint (loseAudio, Vector3.zero);
 		gameOn = false;
 		destroyCircles ();
 		disc.SetActive (false);
@@ -24,9 +27,6 @@ public class Restart : MonoBehaviour {
 	public void reset(){
 		gameOn = true;
 		objectPoolingManager.GetComponent<ObjectPoolingManager> ().createCircles ();
-		disc.SetActive (true);
-		pause.SetActive (true);
-		tryAgain.SetActive (false);
 		GameObject.FindGameObjectWithTag("GameController").GetComponent<Scoring>().score = 0;
 	}
 

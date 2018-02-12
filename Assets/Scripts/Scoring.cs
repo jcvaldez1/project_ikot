@@ -25,9 +25,9 @@ public class Scoring : MonoBehaviour {
 		if (points != 0){
 			AudioSource.PlayClipAtPoint (scoreAudio, Vector3.zero);
 			score = score + points;
-			scoreText.text = ""+ score;
 			points = 0;
 		}
+		scoreText.text = ""+ score;
 		CheckForHighScore ();
 	}
 

@@ -50,14 +50,13 @@ public class moveToCenter : MonoBehaviour {
 		} else if (pattern == 2) {
 			Star ();
 		}
-		Debug.Log (pattern);
 	}
 
 	void Circle(){
 		toCenter = new Vector3 (0.0f - transform.position.x, 0.0f - transform.position.y, 0.0f).normalized;//Vector pointing to center
 		toCircle = Vector3.Cross(toCenter,new Vector3(transform.position.x,transform.position.y,1)).normalized;//Vector field forming a circle around the center
 
-		transform.Translate (speed * dir * toCircle * Time.deltaTime);//Rotate around the circle
+		transform.Translate (2.5f*speed * dir * toCircle * Time.deltaTime);//Rotate around the circle
 		transform.Translate (speed * toCenter * Time.deltaTime);//Follow the vector and move towards the center at a given speed per second
 	}
 
@@ -69,7 +68,7 @@ public class moveToCenter : MonoBehaviour {
 				transform.Translate (speed * toCenter * Time.deltaTime);
 			} else if (Vector3.Distance (Vector3.zero, transform.position) < 4) {
 				toCircle = Vector3.Cross (toCenter, new Vector3 (transform.position.x, transform.position.y, 1)).normalized;//Vector field forming a circle around the center
-				transform.Translate (speed*dir * toCircle * Time.deltaTime);
+				transform.Translate (2.5f * speed*dir * toCircle * Time.deltaTime);
 			}
 			currentTime = Time.time;
 		} else {

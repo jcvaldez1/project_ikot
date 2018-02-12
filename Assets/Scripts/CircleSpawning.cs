@@ -9,7 +9,7 @@ public class CircleSpawning : MonoBehaviour {
 	public bool gameOn;
 	public int direction;
 	public int pattern;
-	private int TickThreshold = 0;
+	//private int TickThreshold = 0;
 	public int NUMBER_OF_PATTERNS = 3;
 	public float TICK_INTERVAL = 10.0f;
 	public int NUMBER_OF_REGIONS = 4;

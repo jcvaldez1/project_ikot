@@ -25,9 +25,9 @@ public class Restart : MonoBehaviour {
 
 
 	public void reset(){
+		GameObject.FindGameObjectWithTag("GameController").GetComponent<Scoring>().score = 0;
 		gameOn = true;
 		objectPoolingManager.GetComponent<ObjectPoolingManager> ().createCircles ();
-		GameObject.FindGameObjectWithTag("GameController").GetComponent<Scoring>().score = 0;
 	}
 
 	public void restart(){

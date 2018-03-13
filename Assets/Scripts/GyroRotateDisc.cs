@@ -14,7 +14,7 @@ public class GyroRotateDisc : MonoBehaviour {
 
 
 	void Awake () {
-		speed = speedSlider.GetComponent<Slider>().value;
+		speed = 500;
 		speedText.text = "Speed/Sensitivity: " + speed;
 	}
 		

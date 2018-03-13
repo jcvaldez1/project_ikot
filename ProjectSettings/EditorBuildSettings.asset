@@ -6,5 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Demo.unity
+    path: Assets/Scenes/GyroDemo.unity
     guid: e392611737ff6144798e78f2b7b29343
+  - enabled: 0
+    path: Assets/Scenes/TouchDemo.unity
+    guid: 8bbdaa9460e0a4245a27da14b5c1bfae

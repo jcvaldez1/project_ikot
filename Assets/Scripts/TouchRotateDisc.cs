@@ -22,7 +22,7 @@ public class TouchRotateDisc : MonoBehaviour {
 
 
 	void Awake () {
-		speed = speedSlider.GetComponent<Slider>().value;
+		speed = 240;
 		speedText.text = "Speed/Sensitivity: " + speed;
 	}
 	

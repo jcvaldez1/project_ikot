@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class CircleSpawning : MonoBehaviour {
 
+	public GameObject GameController;
 	public GameObject restart;
 	private GameObject toBeSpawned;
 	public bool gameOn;
 	public int direction;
 	public int pattern;
 	//private int TickThreshold = 0;
-	public int NUMBER_OF_PATTERNS = 3;
+	public int NUMBER_OF_PATTERNS = 4;
 	public float TICK_INTERVAL = 10.0f;
 	public int NUMBER_OF_REGIONS = 4;
 
@@ -80,7 +81,27 @@ public class CircleSpawning : MonoBehaviour {
 
 
 	public int DetermineCirclePattern(){
-		int pattern = Random.Range (0, NUMBER_OF_PATTERNS);
+		int currentScore = GameController.GetComponent<Scoring> ().score;
+		int pattern;
+
+		if (currentScore < 10) {
+			pattern = 0;
+		} else if (currentScore >= 10 && currentScore <= 13) {//Introduce new pattern
+			pattern = 1;
+		} else if (currentScore > 13 && currentScore < 25) {//Randomly spawn previously known patterns
+			pattern = Random.Range (0, 1);
+		} else if (currentScore >= 25 && currentScore <= 28) {
+			pattern = 2;
+		} else if (currentScore > 28 && currentScore < 40) {
+			pattern = Random.Range (0, 2);
+		} else if (currentScore >= 50 && currentScore <= 53) {
+			pattern = 3;
+		} else if (currentScore > 53) {
+			pattern = Random.Range (0, 3);
+		} else {
+			pattern = 0;
+		}
+
 		return pattern;
 	}
 

@@ -1,6 +1,6 @@
 Android
 SceneListBegin?
-Assets/Scenes/Demo.unity
+Assets/Scenes/GyroDemo.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 970a95104359198fe1a98ef48655de8c UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -14,7 +14,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 9ca6347af5ceb6b0d1c105af31b6722e UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-2a21153f5dfa43a4d9ea6ac483bd79c7 Assembly-CSharp.dll:.CircleSpawning
+87e23ee3f4c82173e417f3497bd313aa Assembly-CSharp.dll:.CircleSpawning
 de95bbbec1ec5cf131bae842bd422025 Assembly-CSharp.dll:.ScrollRotate
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -106,7 +106,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 3f32f08a64daf40b09ed864d96fe3840 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
-88236f24937a94681c920dca6b4633b9 Assembly-CSharp.dll:.StartScript
+88236f24937a94681c920dca6b4633b9 Assembly-CSharp.dll:.TiltStartScript
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 fbbdcf6855200182cc250d4d023b298a Assembly-CSharp.dll:.TouchRotateDisc
 322cb40e1e282f28af980cbef7922a90 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
@@ -150,6 +150,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 fec697403e8b1d1d98bcab37e0a52228 Assembly-CSharp.dll:.Restart
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+88236f24937a94681c920dca6b4633b9 Assembly-CSharp.dll:.TouchStartScript
 7c6fb094f5246b8f18656fe8bd7cfc58 Assembly-CSharp.dll:.CircleDetection
 9c4d5c8ec8a190483dc7d452819ad5bd Assembly-CSharp.dll:.Constants
 bbf1104287a7302cc1ad135de466e18e Assembly-CSharp.dll:.CameraMove

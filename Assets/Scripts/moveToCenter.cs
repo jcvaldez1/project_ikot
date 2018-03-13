@@ -44,15 +44,22 @@ public class moveToCenter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (pattern == 0) {
-			Circle ();
+			Easiest ();
 		} else if (pattern == 1) {
-			Triangle ();
+			Easy ();
 		} else if (pattern == 2) {
-			Star ();
+			Medium ();
+		} else if (pattern == 3) {
+			Hard ();
 		}
 	}
 
-	void Circle(){
+	void Easiest(){//Circles move to center, appears from start
+		toCenter = new Vector3 (0.0f - transform.position.x, 0.0f - transform.position.y, 0.0f).normalized;//Vector pointing to center
+		transform.Translate (speed * toCenter * Time.deltaTime);//Follow the vector and move towards the center at a given speed per second
+	}
+
+	void Easy(){//Move to center while rotating around the circle, appears after 10pts.
 		toCenter = new Vector3 (0.0f - transform.position.x, 0.0f - transform.position.y, 0.0f).normalized;//Vector pointing to center
 		toCircle = Vector3.Cross(toCenter,new Vector3(transform.position.x,transform.position.y,1)).normalized;//Vector field forming a circle around the center
 
@@ -60,7 +67,7 @@ public class moveToCenter : MonoBehaviour {
 		transform.Translate (speed * toCenter * Time.deltaTime);//Follow the vector and move towards the center at a given speed per second
 	}
 
-	void Triangle(){
+	void Medium(){//Circles move to center, rotate around then circle at a certain distance, then move quickly inwards, appears after 25pts.
 		toCenter = new Vector3 (0.0f - transform.position.x, 0.0f - transform.position.y, 0.0f).normalized;//Vector pointing to center
 		currentTime = Time.time;
 		if (currentTime - startTime < 4.0f) {
@@ -77,7 +84,7 @@ public class moveToCenter : MonoBehaviour {
 	}
 
 
-	void Star(){
+	void Hard(){//Circles move to center, move away, and then spin really fast towards the center, appears after 50 pts.
 		currentTime = Time.time;
 		//Debug.Log ("Star: " + jukeState);
 		toCenter = new Vector3 (0.0f - transform.position.x, 0.0f - transform.position.y, 0.0f).normalized;//Vector pointing to center

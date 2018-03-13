@@ -64,8 +64,9 @@
      <Compile Include="Assets\Scripts\Restart.cs" />
      <Compile Include="Assets\Scripts\Scoring.cs" />
      <Compile Include="Assets\Scripts\ScrollRotate.cs" />
-     <Compile Include="Assets\Scripts\StartScript.cs" />
+     <Compile Include="Assets\Scripts\TiltStartScript.cs" />
      <Compile Include="Assets\Scripts\TouchRotateDisc.cs" />
+     <Compile Include="Assets\Scripts\TouchStartScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

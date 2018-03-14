@@ -11,11 +11,7 @@ public class DiscDetection : MonoBehaviour {
 		resta = GameObject.FindGameObjectWithTag ("Restart");
 	}
 
-
-
-
 	void OnTriggerEnter2D(Collider2D coll){
-
 
 		if (object.Equals (this.tag, coll.tag)) {
 			gameController.GetComponent<Scoring> ().points += 1;
@@ -25,7 +21,5 @@ public class DiscDetection : MonoBehaviour {
 
 		this.gameObject.SetActive (false);
 	}
-
-
-
+		
 }

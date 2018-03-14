@@ -90,6 +90,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cddb747a542de574ba9daf5df2fefecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GreenGlow_disc: {fileID: 1533930458392584, guid: 216ec3358de65e441a8256d52cdd5376,
+    type: 2}
+  BlueGlow_disc: {fileID: 1513332316943106, guid: b4f572e2264aead44bba23da45f8d675,
+    type: 2}
+  RedGlow_disc: {fileID: 1567345628647650, guid: 0c2b55c28208fc840b7be587a69e41c2,
+    type: 2}
+  YellowGlow_disc: {fileID: 1105486265745286, guid: a1c072bb30dca7a409ea7434e104e394,
+    type: 2}
 --- !u!114 &114473028721548438
 MonoBehaviour:
   m_ObjectHideFlags: 1

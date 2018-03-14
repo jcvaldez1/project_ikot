@@ -1,10 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\moveToCenter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\QuarterDisc_Glow.cs">
     <Files>
-      <File FileName="Assets\Scripts\CircleSpawning.cs" Line="14" Column="35" />
-      <File FileName="Assets\Scripts\ObjectPoolingManager.cs" Line="147" Column="1" />
-      <File FileName="Assets\Scripts\moveToCenter.cs" Line="76" Column="1" />
+      <File FileName="Assets\Scripts\DiscDetection.cs" Line="17" Column="56" />
+      <File FileName="Assets\QuarterDisc_Glow.cs" Line="22" Column="13" />
+      <File FileName="Assets\Scripts\Restart.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

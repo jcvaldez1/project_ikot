@@ -20,6 +20,11 @@ TagManager:
   - Red
   - Blue
   - Yellow
+  - GreenGlow
+  - BlueGlow
+  - RedGlow
+  - YellowGlow
+  - GlowTag
   layers:
   - Default
   - TransparentFX

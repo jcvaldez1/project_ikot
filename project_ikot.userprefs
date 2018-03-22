@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\QuarterDisc_Glow.cs">
     <Files>
-      <File FileName="Assets\Scripts\DiscDetection.cs" Line="17" Column="56" />
-      <File FileName="Assets\QuarterDisc_Glow.cs" Line="22" Column="13" />
+      <File FileName="Assets\Scripts\DiscDetection.cs" Line="1" Column="1" />
+      <File FileName="Assets\QuarterDisc_Glow.cs" Line="25" Column="33" />
       <File FileName="Assets\Scripts\Restart.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
